@@ -33,7 +33,7 @@ fun WelcomeScreen(
         Spacer(modifier = androidx.compose.ui.Modifier.height(spacing.spaceMedium))
         ActionButton(
             text = stringResource(id = core.R.string.next),
-            onClick = { onNavigate(UiEvent.Navigate(Route.AGE)) },
+            onClick = { onNavigate(UiEvent.Navigate(Route.GENDER)) },
             modifier = Modifier.align(Alignment.CenterHorizontally)
         )
     }
