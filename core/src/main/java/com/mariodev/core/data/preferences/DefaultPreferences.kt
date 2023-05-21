@@ -1,4 +1,4 @@
-package com.mariodev.core.domain
+package com.mariodev.core.data.preferences
 
 import android.content.SharedPreferences
 import com.mariodev.core.domain.model.ActivityLevel
@@ -70,4 +70,11 @@ class DefaultPreferences(
         )
     }
 
+    override fun saveShouldShowOnboarding(shouldShow: Boolean) {
+        sharedPref.edit().putBoolean(Preferences.KEY_SHOULD_SHOW_ONBOARDING,shouldShow).apply()
+    }
+
+    override fun loadShouldShowOnboarding(): Boolean {
+        return sharedPref.getBoolean(Preferences.KEY_SHOULD_SHOW_ONBOARDING,true)
+    }
 }

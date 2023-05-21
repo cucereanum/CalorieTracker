@@ -22,6 +22,7 @@ import com.mariodev.onboarding_presentation.height.HeightScreen
 import com.mariodev.onboarding_presentation.nutrient_goal.NutrientGoalScreen
 import com.mariodev.onboarding_presentation.weight.WeightScreen
 import com.mariodev.onboarding_presentation.welcome.WelcomeScreen
+import com.mariodev.tracker_presentation.tracker_overview.TrackerOverviewScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -79,7 +80,7 @@ class MainActivity : ComponentActivity() {
                         }
 
                         composable(Route.TRACKER_OVERVIEW) {
-
+                            TrackerOverviewScreen(onNavigate = navController::navigate)
                         }
                         composable(Route.SEARCH) {
 

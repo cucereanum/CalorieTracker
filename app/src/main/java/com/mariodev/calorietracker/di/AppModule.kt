@@ -3,7 +3,7 @@ package com.mariodev.calorietracker.di
 import android.app.Application
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
-import com.mariodev.core.domain.DefaultPreferences
+import com.mariodev.core.data.preferences.DefaultPreferences
 import com.mariodev.core.domain.preferences.Preferences
 import com.mariodev.core.domain.use_case.FilterOutDigits
 import dagger.Module
