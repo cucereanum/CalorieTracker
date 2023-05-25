@@ -6,9 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mariodev.core.domain.model.ActivityLevel
-import com.mariodev.core.domain.model.Gender
 import com.mariodev.core.domain.preferences.Preferences
-import com.mariodev.core.navigation.Route
 import com.mariodev.core.util.UiEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
@@ -32,7 +30,7 @@ class ActivityViewModel @Inject constructor(
     fun onNextClick() {
         viewModelScope.launch {
             preferences.saveActivityLevel(selectedActivityLevel)
-            _uiEvent.send(UiEvent.Navigate(Route.GOAL))
+            _uiEvent.send(UiEvent.Success)
         }
     }
 }

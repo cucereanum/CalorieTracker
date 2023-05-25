@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mariodev.core.domain.model.Gender
 import com.mariodev.core.domain.preferences.Preferences
-import com.mariodev.core.navigation.Route
 import com.mariodev.core.util.UiEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
@@ -31,7 +30,7 @@ class GenderViewModel @Inject constructor(
     fun onNextClick() {
         viewModelScope.launch {
             preferences.saveGender(selectedGender)
-            _uiEvent.send(UiEvent.Navigate(Route.AGE))
+            _uiEvent.send(UiEvent.Success)
         }
     }
 }

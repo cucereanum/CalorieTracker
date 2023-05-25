@@ -1,4 +1,4 @@
-package com.mariodev.core.navigation
+package com.mariodev.calorietracker.navigation
 
 object Route {
     const val WELCOME = "welcome"

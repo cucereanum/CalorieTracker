@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mariodev.core.domain.preferences.Preferences
 import com.mariodev.core.domain.use_case.FilterOutDigits
-import com.mariodev.core.navigation.Route
 import com.mariodev.core.util.UiEvent
 import com.mariodev.core.util.UiText
 import core.R
@@ -46,7 +45,7 @@ class HeightViewModel @Inject constructor(
                 return@launch
             }
             preferences.saveHeight(heightNumber)
-            _uiEvent.send(UiEvent.Navigate(Route.WEIGHT))
+            _uiEvent.send(UiEvent.Success)
         }
     }
 }

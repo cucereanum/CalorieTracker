@@ -12,23 +12,21 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.mariodev.core.domain.model.ActivityLevel
-import com.mariodev.core.domain.model.Gender
 import com.mariodev.core.util.UiEvent
 import com.mariodev.coreui.LocalSpacing
 import com.mariodev.onboarding_presentation.components.ActionButton
 import com.mariodev.onboarding_presentation.components.SelectableButton
-import kotlinx.coroutines.flow.collect
 
 @Composable
 fun ActivityScreen(
-    onNavigate: (UiEvent.Navigate) -> Unit,
+    onNextClick: () -> Unit,
     viewModel: ActivityViewModel = hiltViewModel()
 ) {
     val spacing = LocalSpacing.current
     LaunchedEffect(key1 = true) {
         viewModel.uiEvent.collect { event ->
             when (event) {
-                is UiEvent.Navigate -> onNavigate(event)
+                is UiEvent.Success -> onNextClick()
                 else -> Unit
             }
         }

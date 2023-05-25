@@ -6,7 +6,6 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mariodev.core.domain.preferences.Preferences
-import com.mariodev.core.navigation.Route
 import com.mariodev.core.util.UiEvent
 import com.mariodev.core.util.UiText
 import core.R
@@ -44,7 +43,7 @@ class WeightViewModel @Inject constructor(
                 return@launch
             }
             preferences.saveWeight(weightNumber)
-            _uiEvent.send(UiEvent.Navigate(Route.ACTIVITY))
+            _uiEvent.send(UiEvent.Success)
         }
     }
 }
